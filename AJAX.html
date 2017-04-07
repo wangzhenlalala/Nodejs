@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+
+    <style>
+    </style>
+
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+
+    <script>
+      $(function(){
+          $('#controller').bind('click',
+            function(event){
+                console.log("loading");
+                $.getJSON('https://api.github.com/search/repositories?q=javascript&sort=stars')
+                  .then(
+                        function(data){
+                          var items = data.items;
+                          var length = items.length;
+                          var index = parseInt(Math.random()*length);
+                          var load = items[index].stargazers_count % 300;
+                          
+                          $('#onlyOne').html("HF，" + load + " 遍");
+                        },
+                        function(error){
+                          alert("ajax error")
+                        }
+                  ) //then
+            } //function(event)
+          ) //bind
+      })  //$(function())
+    </script>
+
+</head>
+
+<body>
+    <div id="onlyOne">
+        HI，there。
+    </div>
+    <input id="controller" type="button" value="AJAX | get a number | click again" />
+</body>
