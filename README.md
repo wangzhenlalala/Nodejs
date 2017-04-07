@@ -14,6 +14,7 @@ i've tried many solutions:
 1.append  
 		'--enable-webgl --ignore-gpu-blacklist --allow-file-access-from-files' 
   after chrome.exe 
+  
 2. communicate with server by JSONP, and change server with 
 		writeHead({
 			'Allow-Origin-Access-Control':'*'
