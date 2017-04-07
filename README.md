@@ -10,6 +10,7 @@ HU, now the server is running on your PC  ,you can play with it by visit http://
 what makes me mad is : when i visit my own server  from a html page  at localhost,
 chrome forbiddens it . ajax will fail every time . 
 i've tried many solutions:
+
 1.append  
 		'--enable-webgl --ignore-gpu-blacklist --allow-file-access-from-files' 
   after chrome.exe 
